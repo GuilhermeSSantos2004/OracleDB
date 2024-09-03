@@ -1,6 +1,6 @@
 SET ECHO ON
 
--- 1. Comando SQL para criação da tabela “AUTOR”, com todas as constraints.
+-- 1. Comando SQL para criaÃ§Ã£o da tabela â€œAUTORâ€, com todas as constraints.
 
 CREATE TABLE AUTOR (
     COD_AUTOR number(6) CONSTRAINT pk_autor PRIMARY KEY,
@@ -10,7 +10,7 @@ CREATE TABLE AUTOR (
     OBS varchar(100) 
 );  
 
--- 2. Comando SQL para criação da tabela “LIVRO”, com todas as constraints.
+-- 2. Comando SQL para criaÃ§Ã£o da tabela â€œLIVROâ€, com todas as constraints.
 
 CREATE TABLE LIVRO (
     COD_LIVRO NUMBER(7) CONSTRAINT pk_livro PRIMARY KEY, 
@@ -20,7 +20,7 @@ CREATE TABLE LIVRO (
     PRECO NUMBER(6, 2) CONSTRAINT ck_preco CHECK (PRECO >= 0) 
 );
 
--- 3. Comando SQL para criação da tabela “AUTORIA”, com todas as constraints.
+-- 3. Comando SQL para criaÃ§Ã£o da tabela â€œAUTORIAâ€, com todas as constraints.
 
 CREATE TABLE AUTORIA (
     COD_LIVRO NUMBER(7),
@@ -30,25 +30,25 @@ CREATE TABLE AUTORIA (
     CONSTRAINT fk_autor FOREIGN KEY (COD_AUTOR) REFERENCES AUTOR(COD_AUTOR)
 );
 
--- 4. Após realizar as questões anteriores, execute o comando:
+-- 4. ApÃ³s realizar as questÃµes anteriores, execute o comando:
 
 INSERT INTO autoria VALUES (1, 1);
 -- Ocorreu erro? Caso tenha ocorrido erro, transcreva a mensagem e explique o motivo.
--- Ocorreu o erro porque não há refeencias correspondentes nas tabelas LIVRO e AUTOR
+-- Ocorreu o erro porque nÃ£o hÃ¡ refeencias correspondentes nas tabelas LIVRO e AUTOR
 
 
--- 5. Aumente o tamanho da coluna “OBS”, da tabela “AUTOR”, para 200 (duzentos) caracteres.
+-- 5. Aumente o tamanho da coluna â€œOBSâ€, da tabela â€œAUTORâ€, para 200 (duzentos) caracteres.
 
 ALTER TABLE AUTOR 
 MODIFY (obs varchar (200));
 
--- 6. A coluna “ISBN”, da tabela “LIVRO”, deve ser obrigatória. Realize a modificação. 
+-- 6. A coluna â€œISBNâ€, da tabela â€œLIVROâ€, deve ser obrigatÃ³ria. Realize a modificaÃ§Ã£o. 
 
 ALTER TABLE LIVRO 
 MODIFY ISBN NOT NULL;
 
 
---  Acrescente a coluna “RESENHA” na tabela “LIVRO”, com tipo “caractere” e tamanho = 500.
+--  Acrescente a coluna â€œRESENHAâ€ na tabela â€œLIVROâ€, com tipo â€œcaractereâ€ e tamanho = 500.
 
 ALTER TABLE LIVRO 
 ADD (RESENHA varchar (500));
