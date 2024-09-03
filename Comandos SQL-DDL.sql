@@ -34,6 +34,7 @@ CREATE TABLE AUTORIA (
 
 INSERT INTO autoria VALUES (1, 1);
 -- Ocorreu erro? Caso tenha ocorrido erro, transcreva a mensagem e explique o motivo.
+--ERRO: ORA-02291: integrity constraint (RM551168.FK_AUTOR) violated - parent key not found
 -- Ocorreu o erro porque não há refeencias correspondentes nas tabelas LIVRO e AUTOR
 
 
